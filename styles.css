@@ -37,17 +37,18 @@
     border: 1px solid black;
 }
 
-#testy {
-    height: 25px;
-    width: 25px;
-    border: 1px solid black;
-}
-
 .unit {
     width: 75%;
     height: 75%;
-    border: 2px solid red;
     justify-self: center;
     align-self: center;
     z-index: 10;
+}
+
+.hero {
+    border: 2px solid blue;
+}
+
+.enemy {
+    border: 2px solid red;
 }

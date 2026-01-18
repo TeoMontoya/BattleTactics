@@ -15,6 +15,7 @@ class Unit {
     unitEl.style.gridRow = this.y + 1;
 
     gridContainer.appendChild(unitEl);
+    return unitEl;
   }
 }
 export default Unit;

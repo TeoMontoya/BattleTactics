@@ -2,20 +2,32 @@ import { VERSION, ENGINE_NAME } from "./utils/constants.js";
 import GridRenderer from "./ui/GridRenderer.js";
 import GameLoop from "./core/GameLoop.js";
 import Unit from "./entities/Unit.js";
+import PlayerUnit from "./entities/PlayerUnit.js";
+import EnemyUnit from "./entities/EnemyUnits.js";
 
 const gridContainerElement = document.getElementById("grid-container");
 const unitLayerElement = document.getElementById("units-layer");
 const grid = new GridRenderer(gridContainerElement, 10);
 const ticker = new GameLoop();
-const newWarrior = new Unit({
+const hero = new PlayerUnit({
   id: 2,
-  name: "Warrior",
+  name: "Hero",
+  health: 150,
+  x: 5,
+  y: 3,
+  stamina: 15,
+});
+const villain = new EnemyUnit({
+  id: 6,
+  name: "villain",
   health: 150,
   x: 7,
-  y: 7,
+  y: 5,
+  aggroRange: 4,
 });
 
 grid.render();
 ticker.start();
-newWarrior.render(unitLayerElement);
+hero.render(unitLayerElement);
+villain.render(unitLayerElement);
 console.log(`${ENGINE_NAME}: Initialized (v${VERSION})`);
