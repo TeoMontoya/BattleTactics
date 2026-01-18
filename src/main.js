@@ -31,3 +31,4 @@ ticker.start();
 hero.render(unitLayerElement);
 villain.render(unitLayerElement);
 console.log(`${ENGINE_NAME}: Initialized (v${VERSION})`);
+console.log("test");
