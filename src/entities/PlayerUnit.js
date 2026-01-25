@@ -6,8 +6,8 @@ class PlayerUnit extends Unit {
     this.stamina = stamina;
     this.classType = "Hero";
   }
-  render(gridContainer) {
-    const unitEl = super.render(gridContainer);
+  render(gridContainer, gridSize) {
+    const unitEl = super.render(gridContainer, gridSize);
     unitEl.classList.add("hero");
     return unitEl;
   }

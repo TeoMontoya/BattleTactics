@@ -6,8 +6,8 @@ class EnemyUnit extends Unit {
     this.aggroRange = aggroRange;
     this.classType = "Enemy";
   }
-  render(gridContainer) {
-    const unitEl = super.render(gridContainer);
+  render(gridContainer, gridSize) {
+    const unitEl = super.render(gridContainer, gridSize);
     unitEl.classList.add("enemy");
     return unitEl;
   }

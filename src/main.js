@@ -5,30 +5,33 @@ import Unit from "./entities/Unit.js";
 import PlayerUnit from "./entities/PlayerUnit.js";
 import EnemyUnit from "./entities/EnemyUnits.js";
 
+const GRID_SIZE = 5;
+
 const gridContainerElement = document.getElementById("grid-container");
 const unitLayerElement = document.getElementById("units-layer");
-const grid = new GridRenderer(gridContainerElement, 10);
+unitLayerElement.style.setProperty("--grid-size", GRID_SIZE);
+const grid = new GridRenderer(gridContainerElement, GRID_SIZE);
 const ticker = new GameLoop();
 const hero = new PlayerUnit({
   id: 2,
   name: "Hero",
   health: 150,
   x: 5,
-  y: 3,
+  y: 5,
   stamina: 15,
 });
 const villain = new EnemyUnit({
   id: 6,
   name: "villain",
   health: 150,
-  x: 7,
-  y: 5,
+  x: 2,
+  y: 4,
   aggroRange: 4,
 });
 
 grid.render();
 ticker.start();
-hero.render(unitLayerElement);
-villain.render(unitLayerElement);
+hero.render(unitLayerElement, GRID_SIZE);
+villain.render(unitLayerElement, GRID_SIZE);
 console.log(`${ENGINE_NAME}: Initialized (v${VERSION})`);
-console.log("test");
+console.log(villain);
