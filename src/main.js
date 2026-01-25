@@ -7,22 +7,22 @@ import EnemyUnit from "./entities/EnemyUnits.js";
 
 const gridContainerElement = document.getElementById("grid-container");
 const unitLayerElement = document.getElementById("units-layer");
-const grid = new GridRenderer(gridContainerElement, 10);
+const grid = new GridRenderer(gridContainerElement, 5);
 const ticker = new GameLoop();
 const hero = new PlayerUnit({
   id: 2,
   name: "Hero",
   health: 150,
-  x: 5,
-  y: 3,
+  x: 0,
+  y: 0,
   stamina: 15,
 });
 const villain = new EnemyUnit({
   id: 6,
   name: "villain",
   health: 150,
-  x: 7,
-  y: 5,
+  x: 4,
+  y: 4,
   aggroRange: 4,
 });
 
