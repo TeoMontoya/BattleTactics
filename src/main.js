@@ -4,13 +4,19 @@ import GameLoop from "./core/GameLoop.js";
 import Unit from "./entities/Unit.js";
 import PlayerUnit from "./entities/PlayerUnit.js";
 import EnemyUnit from "./entities/EnemyUnits.js";
+import StateMachine from "./core/StateMachine.js";
 
-const GRID_SIZE = 5;
+const GRID_SIZE = 10;
 
 const gridContainerElement = document.getElementById("grid-container");
 const unitLayerElement = document.getElementById("units-layer");
 unitLayerElement.style.setProperty("--grid-size", GRID_SIZE);
 const grid = new GridRenderer(gridContainerElement, GRID_SIZE);
+const stateDisplayElement = document.getElementById("status");
+const currentStateMachine = new StateMachine(stateDisplayElement);
+window.sm = currentStateMachine;
+window.SM = StateMachine;
+
 const ticker = new GameLoop();
 const hero = new PlayerUnit({
   id: 2,
